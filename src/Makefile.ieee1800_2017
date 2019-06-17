@@ -1,0 +1,24 @@
+IEEE1800_2017 = com/veriktig/scandium/ieee1800_2017
+LISTENER_SRC = \
+	IEEE1800_2017LexerError.java \
+	IEEE1800_2017ParserError.java \
+	IEEE1800_2017PreprocessorListener.java \
+	IEEE1800_2017TextMacroDefinition.java \
+	IEEE1800_2017TextMacros.java
+LISTENER_SRCS = $(LISTENER_SRC:%=$(IEEE1800_2017)/%)
+
+IEEE1800_2017_GRAMMAR = $(IEEE1800_2017)/grammar
+GRAMMAR_SRC = \
+	IEEE1800_2017Lexer.java \
+	IEEE1800_2017ParserBaseListener.java \
+	IEEE1800_2017Parser.java \
+	IEEE1800_2017ParserListener.java \
+	IEEE1800_2017PreprocessorLexer.java \
+	IEEE1800_2017PreprocessorParserBaseListener.java \
+	IEEE1800_2017PreprocessorParser.java \
+	IEEE1800_2017PreprocessorParserListener.java
+GRAMMAR_SRCS = $(GRAMMAR_SRC:%=$(IEEE1800_2017_GRAMMAR)/%)
+
+IEEE1800_2017_SRCS = \
+	$(LISTENER_SRCS) \
+	$(GRAMMAR_SRCS)

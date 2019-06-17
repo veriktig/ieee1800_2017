@@ -1,0 +1,35 @@
+EXTRACT = extractors
+EXTRACT_SRC = \
+	IEEE1800_2017ModuleExtractor.java \
+	IEEE1800_2017ParameterExtractor.java \
+	IEEE1800_2017PortExtractor.java
+EXTRACT_SRCS = $(EXTRACT_SRC:%=$(EXTRACT)/%)
+
+OBJECT_MODEL = object_model
+OBJECT_SRC = \
+	SVModule.java \
+	SVParameter.java \
+	SVPort.java
+OBJECT_SRCS = $(OBJECT_SRC:%=$(OBJECT_MODEL)/%)
+
+LINTER = linter
+LINTER_SRC = \
+	Linter.java
+LINTER_SRCS = $(LINTER_SRC:%=$(LINTER)/%)
+
+PP = preprocessor
+PP_SRC = \
+	 Preprocessor.java
+PP_SRCS = $(PP_SRC:%=$(PP)/%)
+
+TREE = parse_tree
+TREE_SRC = \
+	SVParseTree.java
+TREE_SRCS = $(TREE_SRC:%=$(TREE)/%)
+
+EXAMPLE_SRCS = \
+	$(EXTRACT_SRCS) \
+	$(OBJECT_SRCS) \
+	$(LINTER_SRCS) \
+	$(PP_SRCS) \
+	$(TREE_SRCS)
