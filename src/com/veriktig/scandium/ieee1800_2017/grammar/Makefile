@@ -14,9 +14,9 @@
 
 JAVA = /usr/bin/java
 JAVAC = /usr/bin/javac
-WGET = /usr/bin/wget
+CURL = /usr/bin/curl
 
-ANTRL_JAR = antlr-4.7.2-complete.jar
+ANTLR_JAR = antlr-4.7.2-complete.jar
 ANTLR_URL = https://www.antlr.org/download/antlr-4.7.2-complete.jar
 
 ANTLR = $(JAVA) -jar antlr-4.7.2-complete.jar
@@ -26,12 +26,12 @@ MAIN_GRAMMAR = IEEE1800_2017Lexer.g4 IEEE1800_2017Parser.g4
 
 all:: antlr
 
-antlr: antlr-4.7.2-complete.jar
+antlr: $(ANTLR_JAR)
 	$(ANTLR) -long-messages -listener -no-visitor $(PP_GRAMMAR)
 	$(ANTLR) -long-messages -listener -no-visitor $(MAIN_GRAMMAR)
 
-antlr-4.7.2-complete.jar:
-	$(WGET) $(ANTLR_URL)
+$(ANTLR_JAR):
+	$(CURL) $(ANTLR_URL) -o $(ANTLR_JAR)
 
 CLEANFILES = \
 	*.class \
