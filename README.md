@@ -10,6 +10,10 @@ Any questions I had with the spec are marked **// FRED** in IEEE1800_2017Parser.
 
 This project is designed so that it can used with [Project Scandium](https://github.com/veriktig/scandium).
 
+## License
+The files in src/org are from The ANTRL Project and are covered by ANTLR_LICENSE.
+Other files and ANTLR modifications are covered by LICENSE.
+
 ## Building
 Type ```make```
 
@@ -26,6 +30,7 @@ The Example program:
 The project was built on:
 ```
     Ubuntu 18.04.2
+    macOS 10.14.5
 ```
 
 using:
@@ -40,4 +45,5 @@ using:
 * [MCPP](http://mcpp.sourceforge.net) A portable C preprocessor. BSD-2-clause license
 
 ### Change Log
+* 1.0.1 Use curl instead of wget (for macOS)
 * 1.0.0 Initial Release
