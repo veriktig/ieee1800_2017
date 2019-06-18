@@ -12,8 +12,6 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-package examples;
-
 package com.veriktig.scandium.ieee1800_2017;
 
 import java.io.Serializable;
