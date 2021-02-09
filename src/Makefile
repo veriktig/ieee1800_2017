@@ -1,4 +1,4 @@
-# Copyright 2019 Fred Gotwald.  All rights reserved.
+# Copyright 2021 Fred Gotwald.  All rights reserved.
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -29,10 +29,13 @@ HEAP_SIZE =
 
 all:: listener example
 
-listener: grammar compile jarfile
+listener: grammar classes compile jarfile
 
 grammar:
 	cd $(IEEE1800_2017_GRAMMAR); $(MAKE)
+
+classes:
+	mkdir -p $(CLASSPATH)
 
 compile:
 	$(JAVAC) $(HEAP_SIZE) -d $(CLASSPATH) -Xlint:unchecked $(ANTLR_SRCS) $(IEEE1800_2017_SRCS)
@@ -41,7 +44,7 @@ jarfile:
 	cd $(CLASSPATH); $(JAR) cvf ../../bin/$(JARFILE) .
 
 example:
-	cd $(EXAMPLES); $(MAKE)
+	cd $(EXAMPLES); mkdir -p $(CLASSPATH); $(MAKE)
 
 listen_run: $(TEST)
 	$(JAVA) -cp $(CLASSPATH) com.veriktig.scandium.ieee1800_2017.IEEE1800_2017 $?
