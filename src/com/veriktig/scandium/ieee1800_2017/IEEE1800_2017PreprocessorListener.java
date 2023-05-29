@@ -189,6 +189,7 @@ public class IEEE1800_2017PreprocessorListener extends IEEE1800_2017Preprocessor
 
         String key = ctx.DEFINED_SYMBOL_LP().getText();
         key = key.replaceFirst("[(]", "");
+	key = key.trim();
         String replacement_text = macros.expand(current_path, line_number, return_string, key, runtime_args);
         return_string.append(replacement_text);
     }
@@ -251,7 +252,7 @@ public class IEEE1800_2017PreprocessorListener extends IEEE1800_2017Preprocessor
         IEEE1800_2017TextMacroDefinition tmd = new IEEE1800_2017TextMacroDefinition(name);
         IEEE1800_2017PreprocessorParser.List_of_argsContext ctx2 = ctx.list_of_args(); 
         if (ctx2 == null) {
-            System.err.println("ERROR: Malformed list of arguments.");
+            System.err.println("ERROR: %s text macro with empty parentheses\n", name);
             return;
         }
         List<IEEE1800_2017PreprocessorParser.ArgumentContext> args = ctx2.argument();

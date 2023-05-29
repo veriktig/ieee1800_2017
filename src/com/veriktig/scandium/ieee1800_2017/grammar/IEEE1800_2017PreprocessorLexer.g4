@@ -33,6 +33,7 @@ import java.util.List;
 private int run_level;
 private Queue<Token> tokens = new LinkedList<Token>();
 private Path current_path;
+private int default_level;
 
 public void setFilename(String filename, int level) {
     Path path = Paths.get(filename);
@@ -160,8 +161,10 @@ DEFAULT_TEXT_COMMENT:               '/*' .*? '*/'    -> channel(COMMENTS_CHANNEL
 DEFAULT_TEXT_LINE_COMMENT:          '//' ~[\\\r\n]*    -> channel(COMMENTS_CHANNEL);
 DEFAULT_TEXT_SLASH:                 '/'              -> type(DEFAULT_TEXT);
 DEFAULT_COMMA: ',' -> type(COMMA), mode(DEFINE_ARG_MODE);
-DEFAULT_RP: ')' -> type(RP), mode(TEXT_MODE);
-DEFAULT_TEXT:                    ~[,)\r\n\\/]+ ;
+DEFAULT_LP: '(' { default_level++; } -> type(DEFAULT_TEXT);
+DEFAULT_RP: ')' { if (default_level == 0) { setType(RP); mode(TEXT_MODE); } else
+                 { default_level--; setType(DEFAULT_TEXT); }};
+DEFAULT_TEXT:                    ~[,()\r\n\\/]+ ;
 
 mode TEXT_MODE;
 
