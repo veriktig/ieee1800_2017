@@ -16,10 +16,10 @@ JAVA = /usr/bin/java
 JAVAC = /usr/bin/javac
 CURL = /usr/bin/curl
 
-ANTLR_JAR = antlr-4.7.2-complete.jar
-ANTLR_URL = https://www.antlr.org/download/antlr-4.7.2-complete.jar
+ANTLR_JAR = antlr-4.13.1-complete.jar
+ANTLR_URL = https://www.antlr.org/download/antlr-4.13.1-complete.jar
 
-ANTLR = $(JAVA) -jar antlr-4.7.2-complete.jar
+ANTLR = $(JAVA) -jar antlr-4.13.1-complete.jar
 
 PP_GRAMMAR = IEEE1800_2017PreprocessorLexer.g4 IEEE1800_2017PreprocessorParser.g4
 MAIN_GRAMMAR = IEEE1800_2017Lexer.g4 IEEE1800_2017Parser.g4
