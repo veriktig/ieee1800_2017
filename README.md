@@ -31,15 +31,13 @@ The Example program:
 ### Tools Required
 The project was built on:
 ```
-    Ubuntu 18.04.2
+    Oracle 9
     macOS 10.14.5
 ```
 
 using:
 ```
-    openjdk 11.0.3 2019-04-16
-    OpenJDK Runtime Environment (build 11.0.3+7-Ubuntu-1ubuntu218.04.1)
-    OpenJDK 64-Bit Server VM (build 11.0.3+7-Ubuntu-1ubuntu218.04.1, mixed mode, sharing)
+    JDK22
 ```
 
 ## Other Projects
@@ -47,5 +45,6 @@ using:
 * [MCPP](http://mcpp.sourceforge.net) A portable C preprocessor. BSD-2-clause license
 
 ### Change Log
+* 2.0.0 Update Antlr version and add CI.
 * 1.0.1 Use curl instead of wget (for macOS)
 * 1.0.0 Initial Release
