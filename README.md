@@ -31,13 +31,14 @@ The Example program:
 ### Tools Required
 The project was built on:
 ```
-    Oracle 9
-    macOS 10.14.5
+    Oracle Linux Server release 9.4
 ```
 
 using:
 ```
-    JDK22
+    java 22.0.1 2024-04-16
+    Java(TM) SE Runtime Environment (build 22.0.1+8-16)
+    Java HotSpot(TM) 64-Bit Server VM (build 22.0.1+8-16, mixed mode, sharing)
 ```
 
 ## Other Projects
