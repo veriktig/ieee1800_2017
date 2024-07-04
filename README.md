@@ -1,6 +1,8 @@
 # ieee1800_2017
 SystemVerilog preprocessor, lexer and parser with examples
 
+![workflow](https://github.com/veriktig/scandium/actions/workflows/build.yml/badge.svg)
+
 ## Overview
 The preprocessor was inspired by the excellent **mcpp** by Kiyoshi Matsui.
 
