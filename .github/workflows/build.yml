@@ -14,11 +14,11 @@ jobs:
         steps:
         -   name: Git Checkout
             uses: actions/checkout@v1
-        -   name: Set up latest Oracle JDK 22
+        -   name: Set up latest Oracle JDK 25
             uses: oracle-actions/setup-java@v1
             with: 
                 website: oracle.com
-                release: 22
+                release: 25
         -   name: Build
             shell: bash
             run: make
